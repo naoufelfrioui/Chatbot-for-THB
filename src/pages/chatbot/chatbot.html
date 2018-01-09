@@ -1,0 +1,44 @@
+<ion-header padding style="background-image:url('http://education.uic.edu/sites/default/files/img_robot.jpg');
+background-repeat : no-repeat;background-size:100% 50%">
+    <ion-navbar color="danger">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Chat with Tobi </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="chat-view" id="chat-view">
+    <div class="msg">
+        <div class="mgs" *ngFor="let chat of chats" [ngClass]="{'me': 'me' === chat.from}">
+            <!-- <img class="item" src="http://prywatnik.pl/content/images/2017/02/robotEmoji.png"> -->
+
+            <div class="dv" *ngIf="chat.message">{{chat.message}}</div>
+            <div class="time" [ngClass]="{'me': 'me' === chat.from}">{{message.time}}</div>
+
+        </div>
+    </div>
+
+    <!-- <div class="time" [ngClass]="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
+    </div> -->
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <input type="text" placeholder="Type a message..." [(ngModel)]="message">
+        <button class="bb" type="submit" small class="message-form-button" (click)="sendMessage(message)">Send <ion-icon name="send">
+          </ion-icon></button>
+    </ion-toolbar>
+</ion-footer>
+
+
+
+
+
+<!-- <ion-input type="text" placeholder="Enter Message" [(ngModel)]="message">
+        </ion-input>
+        <button full class="message-form-button" (click)="sendMessage(message)"><ion-icon name="send">
+           </ion-icon></button> -->
+
+<!-- <ion-col width-20>
+                <button full (click)="speechToText()" [disabled]="isRecongizing"><ion-icon name="mic">
+           </ion-icon></button>
+            </ion-col> -->

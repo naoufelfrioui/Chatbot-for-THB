@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Roboter TECH</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="content-stable" on-swipe-left="hideTime = false" on-swipe-right="hideTime = true">
+    <div *ngFor="let message of messages" [ngClass]="{'other': !message.isHuman}" class="messages">
+        <div class="message" *ngIf="message.isHuman" [ngClass]="{'slide-right': hideTime, '': !hideTime}">
+            <span>{{ message.text }}</span>
+        </div>
+        <div class="message" *ngIf="!message.isHuman && !message.layout" [ngClass]="{'slide-right': hideTime, '': !hideTime}">
+            <span>{{ message.text.speech }}</span>
+        </div>
+        <div class="opportunity" *ngIf="!message.isHuman && message.layout === 'opportunityList'" [ngClass]="{'slide-right': hideTime, '': !hideTime}">
+            <h3>Your top opportunities are:</h3>
+            <div *ngFor="let opp of message.text.data.opportunityList">
+                <span><b>{{ opp.Name }}</b><br>
+        Revenue: ${{ opp.Total_Revenue__c }}<br>
+        GP: ${{ opp.Total_Opportunity_GP__c }}
+        </span>
+            </div>
+        </div>
+        <div class="time" [ngClass]="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar position="bottom">
+        <ion-badge class="message-form-badge" (click)="listenForSpeech()">
+            <ion-icon name="mic"></ion-icon>
+        </ion-badge>
+        <input type="text" placeholder="Type a message..." [(ngModel)]="newMessage">
+        <button type="submit" small class="message-form-button" (click)="sendMessage()">Send <ion-icon name="send"></ion-icon></button>
+    </ion-toolbar>
+</ion-footer>

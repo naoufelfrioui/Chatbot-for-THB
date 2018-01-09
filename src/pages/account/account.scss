@@ -1,0 +1,24 @@
+page-account {
+    .avatar-input {
+        display: none;
+    }
+    .avatar {
+        display: block;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        margin: 0 auto;
+        border: 5px solid #f1f1f1;
+        box-shadow: 0 0 5px #999;
+    }
+    button {
+        width: 20%;
+        height: 45px;
+        background: #cc0a2f;
+        border-radius: 4px;
+        color: white;
+    }
+}

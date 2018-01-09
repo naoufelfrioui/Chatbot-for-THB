@@ -1,0 +1,22 @@
+<ion-header padding style="background-image:url('http://education.uic.edu/sites/default/files/img_robot.jpg');
+background-repeat : no-repeat;background-size:100% 50%">
+    <ion-navbar color="danger">
+        <ion-title>
+            Settings
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <button ion-item [navPush]="aboutPage">
+        About this app
+      </button>
+        <button ion-item [navPush]="accountPage">
+        Account
+      </button>
+        <button ion-item (click)="logout()">
+        <ion-label color="danger">Logout</ion-label>
+      </button>
+    </ion-list>
+</ion-content>

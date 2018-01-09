@@ -1,0 +1,26 @@
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header padding style="background-image:url('http://education.uic.edu/sites/default/files/img_robot.jpg');
+background-repeat : no-repeat;background-size:100% 50%">
+        <ion-toolbar color="danger">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content padding style="background-image:url('http://education.uic.edu/sites/default/files/img_robot.jpg');
+background-repeat : no-repeat;background-size:100% 50%">
+        <ion-list>
+            <button menuClose ion-item (click)="getPermission()">
+        Allow Microphone
+      </button>
+        </ion-list>
+        <ion-list>
+            <button menuClose ion-item (click)="openSettigns()">
+        Settings 
+        </button>
+
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

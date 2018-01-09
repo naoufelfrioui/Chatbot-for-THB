@@ -1,0 +1,38 @@
+page-chatbot {
+    .msg {
+        width: 100%;
+        position: absolute;
+        .mgs {
+            width: 70%;
+            padding: 5px 10px;
+            background: #dcdcdc;
+            color: #222;
+            border-radius: 10px;
+            margin: 10px;
+            float: right;
+        }
+        .mgs.me {
+            float: left;
+            background: #007AFF;
+            border: 1px solid #C1CDCD;
+            color: #fff;
+            text-align: left;
+        }
+    }
+    input {
+        width: 68%;
+        height: 45px;
+        margin-right: 1%;
+        margin-left: 1%;
+        padding: 15px;
+        border: 1px solid #ededed;
+        border-radius: 25px;
+    }
+    button {
+        width: 20%;
+        height: 45px;
+        background: #cc0a2f;
+        border-radius: 4px;
+        color: white;
+    }
+}
